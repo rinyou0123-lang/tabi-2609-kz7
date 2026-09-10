@@ -45,24 +45,25 @@ h1,h2,h3,h4{text-wrap:balance}
 
 /* ---------- hero ---------- */
 .hero{position:relative;padding:22px 4px 8px;display:grid;justify-items:center;text-align:center;gap:6px}
+.hero > *{max-width:100%;min-width:0}
 .hero .kicker{font-family:var(--pop);font-size:14px;letter-spacing:.04em}
 .hero .kicker b{background:var(--yellow);padding:1px 10px;border-radius:999px;font-weight:400}
 .titlewrap{position:relative;display:inline-block;padding:10px 26px 14px}
 .titlewrap::before{content:"";position:absolute;inset:6px 0 0;background:url("data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60" preserveAspectRatio="none"%3E%3Cpath d="M17 52 C6 52 3 40 11 35 C6 26 15 17 25 21 C28 9 43 6 50 15 C57 5 74 7 76 20 C87 17 97 27 91 36 C98 42 94 53 83 52 Z" fill="#C9EEF3"/%3E%3C/svg%3E") center/100% 100% no-repeat;z-index:0}
-.hero h1{position:relative;z-index:1;font-family:var(--pop);font-weight:400;font-size:clamp(46px,13vw,78px);line-height:1.1;letter-spacing:.02em}
+.hero h1{position:relative;z-index:1;font-family:var(--pop);font-weight:400;font-size:clamp(40px,12vw,78px);white-space:nowrap;line-height:1.1;letter-spacing:.02em}
 .hero h1 .no{display:inline-grid;place-items:center;width:.52em;height:.52em;margin:0 .02em;border-radius:50%;background:var(--yellow);font-size:.5em;vertical-align:.35em;border:2px solid var(--ink)}
 .hero .where{font-family:var(--pop);font-size:clamp(17px,4.6vw,22px)}
 .hero .car{position:absolute;left:2px;top:10px;width:clamp(64px,17vw,130px)}
 @media (min-width:700px){.hero .car{left:6%;top:70px}.hero .sun{right:8%}}
-.hero .sun{position:absolute;right:0;top:12px;width:clamp(56px,15vw,92px)}
+.hero .sun{position:absolute;right:0;top:26px;width:clamp(44px,11vw,86px)}
 .members{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:6px}
 .members span{font-size:13px;font-weight:700;border:2px solid var(--ink);border-radius:999px;padding:0 12px;background:#fff}
 .members span:nth-child(1){background:var(--yellow-soft)}
 .members span:nth-child(2){background:var(--coral-soft)}
 .members span:nth-child(3){background:var(--line-soft)}
 .members span:nth-child(4){background:#E4F6EC}
-.hero .lead{font-size:14px;color:var(--muted);max-width:32em;margin-top:4px}
-.doodles{display:flex;justify-content:center;gap:14px;margin-top:8px}
+.hero .lead{font-size:14px;color:var(--muted);max-width:min(100%,32em);margin-top:4px;padding:0 4px}
+.doodles{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 14px;margin-top:8px}
 .doodles svg{width:40px;height:40px}
 
 /* ---------- layout ---------- */
@@ -78,7 +79,10 @@ h1,h2,h3,h4{text-wrap:balance}
 /* ---------- map ---------- */
 .mapcard{position:relative;height:100%;border:3px solid var(--ink);border-radius:22px;overflow:hidden;background:#EEF5E1;box-shadow:0 5px 0 var(--ink)}
 #map{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y}
-.maptitle{position:absolute;top:8px;left:8px;z-index:2;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.maptitle{position:absolute;top:8px;left:8px;z-index:2;display:flex;gap:6px;align-items:center}
+.chips{position:absolute;left:8px;bottom:8px;z-index:2;display:flex;gap:6px}
+.chips button{font-family:var(--maru);font-weight:700;font-size:12px;border:2px solid var(--ink);background:#fff;border-radius:999px;padding:0 10px;cursor:pointer;line-height:1.8}
+.chips button[aria-pressed="true"]{background:var(--ink);color:#fff}
 .maptitle .name{font-family:var(--pop);font-size:13px;background:var(--yellow);border:2px solid var(--ink);border-radius:999px;padding:1px 12px}
 .maptitle button{font-family:var(--maru);font-weight:700;font-size:12px;border:2px solid var(--ink);background:#fff;border-radius:999px;padding:0 10px;cursor:pointer;line-height:1.8}
 .maptitle button[aria-pressed="true"]{background:var(--ink);color:#fff}
@@ -122,13 +126,13 @@ h1,h2,h3,h4{text-wrap:balance}
 #day2{--dc:var(--d2);--dcs:var(--d2-soft)}
 
 .tl{list-style:none;margin:0;padding:0}
-.tl > li{position:relative;display:grid;grid-template-columns:66px minmax(0,1fr);gap:10px;padding-bottom:18px}
-.tl > li::before{content:"";position:absolute;left:31px;top:42px;bottom:0;border-left:4px dotted var(--line)}
+.tl > li{position:relative;display:grid;grid-template-columns:68px minmax(0,1fr);gap:10px;padding-bottom:18px}
+.tl > li::before{content:"";position:absolute;left:32px;top:44px;bottom:0;border-left:4px dotted var(--line)}
 .tl > li:last-child::before{display:none}
-.bub{width:66px;height:42px;display:grid;place-items:center;background:url("data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60" preserveAspectRatio="none"%3E%3Cpath d="M17 52 C6 52 3 40 11 35 C6 26 15 17 25 21 C28 9 43 6 50 15 C57 5 74 7 76 20 C87 17 97 27 91 36 C98 42 94 53 83 52 Z" fill="#ffffff" stroke="#5CC1DA" stroke-width="3" vector-effect="non-scaling-stroke" stroke-linejoin="round"/%3E%3C/svg%3E") center/100% 100% no-repeat;font-family:var(--pop);font-size:13.5px;line-height:1;padding-top:3px}
-@media (min-width:940px){.tl > li{grid-template-columns:80px minmax(0,1fr);gap:12px}.tl > li::before{left:38px;top:48px}.bub{width:80px;height:48px;font-size:15px}}
+.bub{width:68px;height:44px;display:grid;place-items:center;background:url("data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60" preserveAspectRatio="none"%3E%3Cpath d="M17 52 C6 52 3 40 11 35 C6 26 15 17 25 21 C28 9 43 6 50 15 C57 5 74 7 76 20 C87 17 97 27 91 36 C98 42 94 53 83 52 Z" fill="#ffffff" stroke="#5CC1DA" stroke-width="3" vector-effect="non-scaling-stroke" stroke-linejoin="round"/%3E%3C/svg%3E") center/100% 100% no-repeat;font-family:var(--pop);font-size:13px;line-height:1;padding-top:3px;white-space:nowrap;letter-spacing:-.02em}
+@media (min-width:940px){.tl > li{grid-template-columns:82px minmax(0,1fr);gap:12px}.tl > li::before{left:39px;top:48px}.bub{width:82px;height:50px;font-size:15px}}
 .bub.small{font-size:13px}
-.item{padding-top:6px;min-width:0;display:grid;gap:6px;border-radius:16px;transition:background-color .25s,box-shadow .25s}
+.item{padding:6px 2px 2px;min-width:0;display:grid;gap:6px;border-radius:16px;transition:background-color .25s,box-shadow .25s}
 .step.on .item{background:var(--dcs);box-shadow:0 0 0 8px var(--dcs)}
 .ih{display:flex;gap:8px;align-items:flex-start}
 .ih .ico{flex:none;width:34px;height:34px;margin-top:-3px}
@@ -141,7 +145,7 @@ h1,h2,h3,h4{text-wrap:balance}
 .tag.maybe{border-style:dashed}
 .go{display:flex;gap:6px;align-items:center;font-size:12.5px;font-weight:700;color:var(--muted)}
 .go svg{flex:none;width:30px;height:20px}
-.photo{margin:2px 0 4px;background:#fff;padding:7px 7px 8px;border-radius:6px;box-shadow:0 2px 8px rgba(40,60,70,.18);transform:rotate(-1.2deg);max-width:340px}
+.photo{margin:4px 4px 6px;background:#fff;padding:7px 7px 8px;border-radius:6px;box-shadow:0 2px 8px rgba(40,60,70,.18);transform:rotate(-1.2deg);max-width:340px}
 .step:nth-child(even) .photo{transform:rotate(1.3deg)}
 .photo img{display:block;width:100%;max-width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:3px}
 details.more{font-size:13px}
@@ -162,7 +166,7 @@ details.more dd{margin:0}
 /* ---------- boxes ---------- */
 .boxes{display:grid;gap:18px;padding-top:34px}
 .box{border:3px solid var(--line);border-radius:28px;padding:16px 18px 18px;position:relative}
-.box h2{font-family:var(--pop);font-weight:400;font-size:20px;display:inline-block;padding:0 4px 4px;border-bottom:3px dashed var(--line);margin-bottom:10px}
+.box h2{font-family:var(--pop);font-weight:400;font-size:20px;display:inline-block;padding:0 4px 4px;border-bottom:3px dashed var(--line);margin-bottom:10px;max-width:calc(100% - 56px)}
 .box .deco{position:absolute;right:14px;top:-18px;width:54px;height:54px;background:#fff}
 .stay{display:grid;gap:10px}
 .stay img{width:100%;max-width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;display:block}
@@ -241,20 +245,19 @@ details.more dd{margin:0}
     <div class="stage" id="stage">
       <div class="mapcard">
         <svg id="map" role="img" aria-label="軽井沢と嬬恋のイラストマップ。1日目は軽井沢駅から南の発地、北の星野エリア、ツルヤを回って国道146号で北の宿へ。2日目は宿から白糸の滝を通って軽井沢駅へ戻る。"></svg>
-        <div class="maptitle">
-          <span class="name">ぐるっとマップ</span>
+        <div class="maptitle"><span class="name">ぐるっとマップ</span></div>
+        <div class="chips" role="group" aria-label="地図の表示">
           <button type="button" id="c-all" aria-pressed="true">ぜんぶ</button>
           <button type="button" id="c-d1" aria-pressed="false">1日目</button>
           <button type="button" id="c-d2" aria-pressed="false">2日目</button>
         </div>
         <svg class="compass" viewBox="0 0 34 42" aria-label="上が北"><circle cx="17" cy="25" r="15" fill="#fff" stroke="#2B2B2B" stroke-width="2"/><path d="M17 12 L22 26 H12 Z" fill="#FF7B6B" stroke="#2B2B2B" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 26 H22 L17 38 Z" fill="#fff" stroke="#2B2B2B" stroke-width="1.6" stroke-linejoin="round"/><text x="17" y="9" text-anchor="middle" font-family="Mochiy Pop One,sans-serif" font-size="9" fill="#2B2B2B">N</text></svg>
-        <div class="mapnote">宿の場所は仮。お店の位置はだいたい</div>
         <div class="scale"><span id="scale-t">1km</span><i id="scale-b" style="width:60px"></i></div>
       </div>
     </div>
 
     <div class="col">
-      <p class="hint">スクロールすると、地図がいまの予定の場所に動くよ。地図のピンをタップしてもOK。</p>
+      <p class="hint">スクロールすると、地図がいまの予定の場所に動くよ。ピンをタップしてもOK。<br>（宿の場所は仮、お店の位置はだいたいです）</p>
 
       <!-- DAY 1 -->
       <section class="day" id="day1">
@@ -533,20 +536,20 @@ function layoutPills(){pills.forEach(function(p){var w=p.t.getComputedTextLength
 soft(P.asama,'浅間山',0,70);
 soft(P.mine,'峰の茶屋',-8,4,'end');
 soft(P.kitakaru,'北軽井沢',0,-60);
-soft(P.naka,'中軽井沢',0,-14,'middle',0,3.5);
-soft(P.kyukaru,'旧軽井沢',14,0,'start',0,3.5);
+soft(P.naka,'中軽井沢',0,-16,'middle',0,3.5);
+soft([1160,1395],'旧軽井沢',0,0,'middle',0,3.5);
 soft(mid(G.river),'湯川',-12,0,'end',0,2.6);
-soft(R.oni[5],'鬼押ハイウェー',14,0,'start');
-soft(S.d7[40],'白糸ハイランドウェイ',16,0,'start');
-soft([700,420],'群馬県'); soft([1100,1080],'長野県');
-soft([1880,1712],'東京へ',-6,-12,'end');
+soft(R.oni[6],'鬼押ハイウェー',-10,0,'end');
+soft([950,1075],'白糸ハイランドウェイ',0,0,'end');
+soft([700,420],'群馬県'); soft([1190,1200],'長野県');
+soft([1400,1598],'東京へ',0,-12,'end');
 shield(R.r18[34],'18'); shield(S.d5[22],'146');
 var cl1=hold([900,1830],3,99); pill(cl1,'発地',0,34,'middle');
 var cl2=hold([830,1290],3,99); pill(cl2,'星野エリア',-24,-6,'end');
 
 var pins={};
 function pin(id,pt,o){
-  var g=hold(pt,0,99); g.classList.add('pin'); var b=el('g',{class:'body'},g);
+  var g=hold(pt,0,o.zmax||99); g.classList.add('pin'); var b=el('g',{class:'body'},g);
   var col=o.col||(o.day===2?'var(--d2)':'var(--d1)');
   if(o.tent) el('circle',{r:26,cy:-22,fill:'none',stroke:col,'stroke-width':2,'stroke-dasharray':'4 4'},b);
   el('path',{d:'M0 0 C-5 -9 -15 -13 -15 -25 A15 15 0 1 1 15 -25 C15 -13 5 -9 0 0 Z',fill:col,stroke:'#fff','stroke-width':2.5},b);
@@ -555,15 +558,15 @@ function pin(id,pt,o){
   g.addEventListener('click',function(){var st=document.querySelector('.step[data-mark="'+id+'"]');if(st) scrollToStep(st);});
   pins[id]=g;
 }
-pin('station',P.station,{col:'#2B2B2B',n:'駅',label:'軽井沢駅',lx:-19,la:'end',ly:-18});
-pin('outlet',P.outlet,{day:2,n:'3',label:'アウトレット',lzmax:1.8,ly:-18});
-pin('rental',P.rental,{day:2,n:'2',label:'レンタカー',lzmax:1.8,ly:-34});
+pin('station',P.station,{col:'#2B2B2B',n:'駅',label:'軽井沢駅',lx:18,ly:-14});
+pin('outlet',P.outlet,{day:2,n:'3',label:'アウトレット',lzmax:1.8,ly:-16,zmax:2.2});
+pin('rental',P.rental,{day:2,n:'2',label:'レンタカー',lzmax:1.8,ly:-36,zmax:2.2});
 pin('mikuriya',P.mikuriya,{day:1,n:'1',label:'御厨',lx:-19,la:'end',lzmax:3});
 pin('hotchi',P.hotchi,{day:1,n:'2',label:'発地市庭',lzmax:3});
 pin('tombo',P.tombo,{day:1,n:'4',label:'トンボの湯',lx:-19,la:'end',ly:-34,lzmax:3});
 pin('harunire',P.harunire,{day:1,n:'3',label:'ハルニレテラス',lzmax:3});
-pin('tsuruya',P.tsuruya,{day:1,n:'5',label:'ツルヤ',lx:-19,la:'end'});
-pin('lodge',P.lodge,{day:1,n:'6',tent:1,label:'宿（位置は仮）'});
+pin('tsuruya',P.tsuruya,{day:1,n:'5',label:'ツルヤ',lx:-19,la:'end',ly:-6});
+pin('lodge',P.lodge,{day:1,n:'6',tent:1,label:'宿（位置は仮）',lx:30,ly:-10});
 pin('shiraito',P.shiraito,{day:2,n:'1',label:'白糸の滝'});
 
 /* views */
@@ -581,10 +584,11 @@ function viewOf(st){
 }
 function fit(v){
   var W=svg.clientWidth||400,H=svg.clientHeight||300,b=v.b;
-  var w=(b[2]-b[0])*(1+v.pad*2),h=(b[3]-b[1])*(1+v.pad*2),cx=(b[0]+b[2])/2,cy=(b[1]+b[3])/2;
-  var a=W/H; if(w/h<a) w=h*a; else h=w/a;
-  var top=48/H*h; h+=top; cy-=top*0.4; w=h*a;
-  return [cx-w/2,cy-h/2,w,h];
+  var bw=(b[2]-b[0])*(1+v.pad*2),bh=(b[3]-b[1])*(1+v.pad*2),cx=(b[0]+b[2])/2,cy=(b[1]+b[3])/2;
+  var top=64,bot=60,side=W<500?64:90;
+  var z=Math.max(bw/Math.max(W-side*2,120),bh/Math.max(H-top-bot,120));
+  var w=W*z,h=H*z;
+  return [cx-w/2,cy-h/2-(top-bot)/2*z,w,h];
 }
 var cur=null,anim=0;
 function setVB(v){cur=v;svg.setAttribute('viewBox',v.join(' '));zoom();}
